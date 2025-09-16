@@ -21,11 +21,14 @@ from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
 
 from user import views as user_views
+from order import views as order_views
 
 router = routers.SimpleRouter(trailing_slash=False)
 
 router.register("user/user", user_views.UserViewSet)
 router.register("user/customer", user_views.CustomerViewSet)
+router.register("order/formula", order_views.FormulaViewSet)
+router.register("order/product", order_views.ProductViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
