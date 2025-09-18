@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Formula, Product
+from .models import Formula, Product, Order
 
 
 class FormulaSerializer(serializers.ModelSerializer):
@@ -15,5 +15,8 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
 

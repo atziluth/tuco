@@ -4,7 +4,6 @@ from rest_framework import response, permissions, views, viewsets, generics, mix
 
 import datetime
 
-from user import models as user_models
 from order import models, serializers
 
 # Create your views here.
@@ -17,3 +16,8 @@ class FormulaViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = models.Product.objects.all()
     serializer_class = serializers.ProductSerializer
+
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = models.Order.objects.all()
+    serializer_class = serializers.OrderSerializer
